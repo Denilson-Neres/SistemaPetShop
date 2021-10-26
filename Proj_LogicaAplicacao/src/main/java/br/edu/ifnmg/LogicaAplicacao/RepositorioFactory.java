@@ -27,7 +27,7 @@ public class RepositorioFactory {
     private static ServicoRepo servico;
     private static OrdemServicoRepo os;
     private static AnimalRepo animal;
-    private static EspecieRepo especie;
+    private static RacaRepo raca;
     private static PagamentoRepo pagamento;
     
     
@@ -118,12 +118,12 @@ public class RepositorioFactory {
     
     }  
     
-    public static EspecieRepo getEspecieRepo(){
-        if(especie == null){
-            String nomeclasse = propriedades.getProperty("EspecieRepo");
-            especie = (EspecieRepo) getInstancia(nomeclasse);
+    public static RacaRepo getRacaRepo(){
+        if(raca == null){
+            String nomeclasse = propriedades.getProperty("RacaRepo");
+            raca = (RacaRepo) getInstancia(nomeclasse);
         }
-        return especie;       
+        return raca;       
     
     }
     

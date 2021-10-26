@@ -7,7 +7,9 @@ package br.edu.ifnmg.persistencia;
 
 import br.edu.ifnmg.LogicaAplicacao.Animal;
 import br.edu.ifnmg.LogicaAplicacao.AnimalRepo;
+import java.util.Hashtable;
 import java.util.List;
+import javax.persistence.Query;
 
 /**
  *
@@ -23,6 +25,26 @@ public class AnimalDAO
 
     @Override
     public List<Animal> Buscar(Animal obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String jpql = "select a from Animal a";
+        
+        String filtros = "";
+        
+        Hashtable<String, Object> parametros = new Hashtable<>();
+        
+        if(obj.getNome().length() > 0){
+            filtros += "a.nome like :nome"; 
+            parametros.put("nome", obj.getNome()+"%");
+        }
+        
+        if(filtros.length() > 0)
+            jpql = jpql + " where " + filtros;
+        
+        var query = this.manager.createQuery(jpql);
+        
+        for(String chave : parametros.keySet()){
+            query.setParameter(chave, parametros.get(chave));
+        }
+        
+        return query.getResultList();
     }
 }

@@ -18,7 +18,7 @@ import javax.persistence.Version;
 
 /**
  *
- * @author DENILSON
+ * @author Denilson
  */
 @Entity
 @Table(name = "Servicos")

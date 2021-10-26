@@ -1,8 +1,8 @@
 br\edu\ifnmg\persistencia\AnimalDAO.class
 br\edu\ifnmg\persistencia\UsuarioDAO.class
-br\edu\ifnmg\persistencia\EspecieDAO.class
 br\edu\ifnmg\persistencia\OrdemServicoDAO.class
 br\edu\ifnmg\persistencia\PagamentoDAO.class
 br\edu\ifnmg\persistencia\DataAccessObject.class
+br\edu\ifnmg\persistencia\RacaDAO.class
 br\edu\ifnmg\persistencia\ClienteDAO.class
 br\edu\ifnmg\persistencia\ServicoDAO.class

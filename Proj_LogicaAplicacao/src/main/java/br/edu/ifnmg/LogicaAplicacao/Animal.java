@@ -39,8 +39,8 @@ public class Animal implements Serializable {
    private Cliente cliente;
     
    //@OneToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
-   @JoinColumn(name = "Especie_id") 
-   private Especie especie;
+   @JoinColumn(name = "Raça_id") 
+   private Raca raca;
     
     @Column(nullable = false, length = 250)
     private String sexo;
@@ -57,13 +57,12 @@ public class Animal implements Serializable {
         this.observacoes = "";
         this.sexo = "";
         this.versao = 1;
-        
     }
 
-    public Animal(String nome, Especie especie, String sexo) {
+    public Animal(String nome, String sexo, Cliente cliente, Raca raca) {
         this.id = 0L;
         this.nome = nome;
-        this.especie = especie;
+        this.raca = raca;
         this.sexo = sexo;
         this.observacoes = observacoes;
         this.versao = 1;
@@ -79,12 +78,12 @@ public class Animal implements Serializable {
         this.id = id;
     }
 
-    public Especie getEspecie() {
-        return especie;
+    public Raca getRaca() {
+        return raca;
     }
 
-    public void setEspecie(Especie especie) {
-        this.especie = especie;
+    public void setRaca(Raca raca) {
+        this.raca = raca;
     }
 
     public String getNome() {

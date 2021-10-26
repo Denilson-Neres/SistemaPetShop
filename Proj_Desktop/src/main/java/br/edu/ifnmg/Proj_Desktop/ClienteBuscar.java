@@ -47,6 +47,11 @@ public class ClienteBuscar extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblResultado = new javax.swing.JTable();
 
+        setClosable(true);
+        setForeground(new java.awt.Color(0, 204, 204));
+        setMaximizable(true);
+        setTitle("Buscar Cliente");
+
         jLabel1.setText("Nome:");
 
         txtNome.addActionListener(new java.awt.event.ActionListener() {
@@ -81,7 +86,7 @@ public class ClienteBuscar extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "ID", "nome", "cpf", "telefone"
+                "ID", "nome", "Documento", "telefone"
             }
         ) {
             Class[] types = new Class [] {
@@ -119,7 +124,7 @@ public class ClienteBuscar extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 66, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -135,7 +140,7 @@ public class ClienteBuscar extends javax.swing.JInternalFrame {
                     .addComponent(btnNovo)
                     .addComponent(btnLimpar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -155,7 +160,7 @@ public class ClienteBuscar extends javax.swing.JInternalFrame {
         DefaultTableModel modelo = new DefaultTableModel();
         modelo.addColumn("ID");
         modelo.addColumn("nome");
-        modelo.addColumn("documento");
+        modelo.addColumn("Documento");
         modelo.addColumn("telefone");
 
         for(Cliente c : resultado){
@@ -174,7 +179,7 @@ public class ClienteBuscar extends javax.swing.JInternalFrame {
 
     private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
         // TODO add your handling code here:
-        ClienteEditar tela = new ClienteEditar(new Cliente());
+        ClienteCadastro tela = new ClienteCadastro(new Cliente());
         this.getParent().add(tela);
         tela.setVisible(true);
     }//GEN-LAST:event_btnNovoActionPerformed
@@ -187,9 +192,9 @@ public class ClienteBuscar extends javax.swing.JInternalFrame {
             txtNome.setText("");
 
             DefaultTableModel modelo = new DefaultTableModel();
-            modelo.addColumn("id");
+            modelo.addColumn("ID");
             modelo.addColumn("nome");
-            modelo.addColumn("cpf");
+            modelo.addColumn("Documento");
             modelo.addColumn("telefone");
             tblResultado.setModel(modelo);
         }
@@ -204,7 +209,7 @@ public class ClienteBuscar extends javax.swing.JInternalFrame {
 
         Cliente c = repositorio.Abrir(id);
 
-        ClienteEditar tela = new ClienteEditar(c);
+        ClienteCadastro tela = new ClienteCadastro(c);
         this.getParent().add(tela);
         tela.setVisible(true);
     }//GEN-LAST:event_tblResultadoMouseClicked

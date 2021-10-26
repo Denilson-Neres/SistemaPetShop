@@ -3,15 +3,15 @@ br\edu\ifnmg\LogicaAplicacao\OrdemServico_.class
 br\edu\ifnmg\LogicaAplicacao\Servico.class
 br\edu\ifnmg\LogicaAplicacao\TipoPessoa.class
 br\edu\ifnmg\LogicaAplicacao\ClienteRepo.class
-br\edu\ifnmg\LogicaAplicacao\Especie_.class
 br\edu\ifnmg\LogicaAplicacao\OrdemServicoItens.class
 br\edu\ifnmg\LogicaAplicacao\Cliente.class
+br\edu\ifnmg\LogicaAplicacao\RacaRepo.class
 br\edu\ifnmg\LogicaAplicacao\Servico_.class
 br\edu\ifnmg\LogicaAplicacao\ServicoRepo.class
-br\edu\ifnmg\LogicaAplicacao\Especie.class
 br\edu\ifnmg\LogicaAplicacao\Animal.class
 br\edu\ifnmg\LogicaAplicacao\StatusOS.class
 br\edu\ifnmg\LogicaAplicacao\Animal_.class
+br\edu\ifnmg\LogicaAplicacao\Raca_.class
 br\edu\ifnmg\LogicaAplicacao\Pagamento_.class
 br\edu\ifnmg\LogicaAplicacao\Usuario.class
 br\edu\ifnmg\LogicaAplicacao\TipoUsuario.class
@@ -25,5 +25,5 @@ br\edu\ifnmg\LogicaAplicacao\OrdemServico.class
 br\edu\ifnmg\LogicaAplicacao\TipoPagamento.class
 br\edu\ifnmg\LogicaAplicacao\Usuario_.class
 br\edu\ifnmg\LogicaAplicacao\Cliente_.class
-br\edu\ifnmg\LogicaAplicacao\EspecieRepo.class
+br\edu\ifnmg\LogicaAplicacao\Raca.class
 br\edu\ifnmg\LogicaAplicacao\UsuarioRepo.class

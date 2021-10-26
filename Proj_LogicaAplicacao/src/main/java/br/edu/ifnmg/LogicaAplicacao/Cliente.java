@@ -6,6 +6,7 @@
 package br.edu.ifnmg.LogicaAplicacao;
 
 import java.io.Serializable;
+import java.util.Objects;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
@@ -47,6 +48,12 @@ public class Cliente implements Serializable {
     private int version;
 
     public Cliente() {
+        this.id = 0L;
+        this.nome = "";
+        this.documento = "";
+        this.telefone = "";
+        this.version = 1;
+        
     }
     
     public Cliente(String nome, String documento, String telefone) {
@@ -55,7 +62,7 @@ public class Cliente implements Serializable {
         this.nome = nome;
         this.documento = documento;
         this.telefone = telefone;
-        this.version = version;
+        this.version = 1;
     }
 
     public int getVersion() {
@@ -97,9 +104,27 @@ public class Cliente implements Serializable {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-    
-    
 
+        @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (id != null ? id.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Cliente)) {
+            return false;
+        }
+        Cliente other = (Cliente) object;
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+            return false;
+        }
+        return true;
+    }
+    
     @Override
     public String toString() {
         return this.nome;

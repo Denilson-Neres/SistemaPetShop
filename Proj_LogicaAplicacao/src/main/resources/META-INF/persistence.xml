@@ -8,8 +8,8 @@
     <class>br.edu.ifnmg.LogicaAplicacao.OrdemServicoItens</class>
     <class>br.edu.ifnmg.LogicaAplicacao.Servico</class>
     <class>br.edu.ifnmg.LogicaAplicacao.Usuario</class>
-    <class>br.edu.ifnmg.LogicaAplicacao.Especie</class>
     <class>br.edu.ifnmg.LogicaAplicacao.Pagamento</class>
+    <class>br.edu.ifnmg.LogicaAplicacao.Raca</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/PetShop?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
       <property name="javax.persistence.jdbc.user" value="dnsj"/>

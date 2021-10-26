@@ -5,6 +5,10 @@
  */
 package br.edu.ifnmg.Proj_Desktop;
 
+import br.edu.ifnmg.LogicaAplicacao.Animal;
+import br.edu.ifnmg.LogicaAplicacao.Cliente;
+import br.edu.ifnmg.LogicaAplicacao.Servico;
+
 /**
  *
  * @author Denilson
@@ -35,8 +39,14 @@ public class Principal extends javax.swing.JFrame {
         mnServico = new javax.swing.JMenuItem();
         mnEfetuarVenda = new javax.swing.JMenuItem();
         mnAnimal = new javax.swing.JMenuItem();
+        btOrdemServico = new javax.swing.JMenu();
+        buscarOS = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        buscarAnimal = new javax.swing.JMenuItem();
+        buscarCliente = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Pet Menu");
 
         jMenu2.setText("Sitema");
         jMenuBar2.add(jMenu2);
@@ -67,7 +77,7 @@ public class Principal extends javax.swing.JFrame {
         });
         mnCadastros.add(mnServico);
 
-        mnEfetuarVenda.setText("Efetuar Venda");
+        mnEfetuarVenda.setText("PrestarServiço");
         mnEfetuarVenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mnEfetuarVendaActionPerformed(evt);
@@ -84,6 +94,43 @@ public class Principal extends javax.swing.JFrame {
         mnCadastros.add(mnAnimal);
 
         jMenuBar2.add(mnCadastros);
+
+        btOrdemServico.setText("Ordem Serviços");
+        btOrdemServico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btOrdemServicoActionPerformed(evt);
+            }
+        });
+
+        buscarOS.setText("Ordem de Serviços");
+        buscarOS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscarOSActionPerformed(evt);
+            }
+        });
+        btOrdemServico.add(buscarOS);
+
+        jMenuBar2.add(btOrdemServico);
+
+        jMenu1.setText("Buscar");
+
+        buscarAnimal.setText("Animal");
+        buscarAnimal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscarAnimalActionPerformed(evt);
+            }
+        });
+        jMenu1.add(buscarAnimal);
+
+        buscarCliente.setText("Cliente");
+        buscarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscarClienteActionPerformed(evt);
+            }
+        });
+        jMenu1.add(buscarCliente);
+
+        jMenuBar2.add(jMenu1);
 
         setJMenuBar(jMenuBar2);
 
@@ -111,22 +158,22 @@ public class Principal extends javax.swing.JFrame {
     private void mnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnClienteActionPerformed
         // TODO add your handling code here:
 
-        ClienteBuscar tela = new ClienteBuscar();
-        this.add(tela);
+        ClienteCadastro tela = new ClienteCadastro(new Cliente());
+        this.getParent().add(tela);
         tela.setVisible(true);
     }//GEN-LAST:event_mnClienteActionPerformed
 
     private void mnServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnServicoActionPerformed
         // TODO add your handling code here:
-   /*     ServicoBuscar tela = new ServicoBuscar();
+        ServicoCadastro tela = new ServicoCadastro(new Servico());
         this.add(tela);
         tela.setVisible(true);
-        */
+        
     }//GEN-LAST:event_mnServicoActionPerformed
 
     private void mnEfetuarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnEfetuarVendaActionPerformed
         // TODO add your handling code here:
-        EfetuarVenda tela = new EfetuarVenda();
+        PrestarServico tela = new PrestarServico();
         this.add(tela);
         tela.setVisible(true);
 
@@ -134,10 +181,36 @@ public class Principal extends javax.swing.JFrame {
 
     private void mnAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnAnimalActionPerformed
         // TODO add your handling code here:
-        AnimalEditar tela = new AnimalEditar();
+        AnimalCadastro tela = new AnimalCadastro(new Animal());
         this.add(tela);
         tela.setVisible(true);
     }//GEN-LAST:event_mnAnimalActionPerformed
+
+    private void btOrdemServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btOrdemServicoActionPerformed
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_btOrdemServicoActionPerformed
+
+    private void buscarOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarOSActionPerformed
+        // TODO add your handling code here:
+         OrdemServicos tela = new OrdemServicos();
+        this.add(tela);
+        tela.setVisible(true);
+    }//GEN-LAST:event_buscarOSActionPerformed
+
+    private void buscarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarAnimalActionPerformed
+        // TODO add your handling code here:
+        AnimalBuscar tela = new AnimalBuscar();
+        this.add(tela);
+        tela.setVisible(true);
+    }//GEN-LAST:event_buscarAnimalActionPerformed
+
+    private void buscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarClienteActionPerformed
+        // TODO add your handling code here:
+        ClienteBuscar tela = new ClienteBuscar();
+        this.add(tela);
+        tela.setVisible(true);
+    }//GEN-LAST:event_buscarClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,6 +248,11 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu btOrdemServico;
+    private javax.swing.JMenuItem buscarAnimal;
+    private javax.swing.JMenuItem buscarCliente;
+    private javax.swing.JMenuItem buscarOS;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem mnAnimal;

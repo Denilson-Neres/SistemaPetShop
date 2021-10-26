@@ -184,7 +184,8 @@ public class OrdemServico implements Serializable {
         if(! this.itens.contains(itens)){
             this.itens.add(itens);
             this.valorTotal = this.valorTotal.add(
-                   itens.getValor().multiply(BigDecimal.valueOf(itens.getQuantidade())));
+                   itens.getValor());
+                    //itens.getValor().multiply(BigDecimal.valueOf(itens.getQuantidade()))); //usado para multiplicar valor x quantidade
             return true;
         }
         return false;
@@ -194,7 +195,7 @@ public class OrdemServico implements Serializable {
         if(this.itens.contains(itens)){
             this.itens.remove(itens);
             this.valorTotal = this.valorTotal.subtract(
-                    itens.getValor().multiply(BigDecimal.valueOf(itens.getQuantidade())));
+                    itens.getValor());
             return true;
         }
         return false;

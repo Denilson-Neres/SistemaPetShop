@@ -46,6 +46,11 @@ public class UsuarioBuscar extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         txtLogin = new javax.swing.JTextField();
 
+        setClosable(true);
+        setForeground(java.awt.Color.red);
+        setMaximizable(true);
+        setTitle("Buscar Usuário");
+
         tblResultado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -153,7 +158,7 @@ public class UsuarioBuscar extends javax.swing.JInternalFrame {
 
         Usuario u = repositorio.Abrir(id);
 
-        EditarUsuario tela = new EditarUsuario(u);
+        UsuarioCadastro tela = new UsuarioCadastro(u);
         this.getParent().add(tela);
         tela.setVisible(true);
     }//GEN-LAST:event_tblResultadoMouseClicked
@@ -183,7 +188,7 @@ public class UsuarioBuscar extends javax.swing.JInternalFrame {
 
     private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
         // TODO add your handling code here:
-        EditarUsuario tela = new EditarUsuario(new Usuario());
+        UsuarioCadastro tela = new UsuarioCadastro(new Usuario());
         this.getParent().add(tela);
         tela.setVisible(true);
     }//GEN-LAST:event_btnNovoActionPerformed

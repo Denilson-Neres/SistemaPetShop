@@ -35,24 +35,30 @@ public class OrdemServicoItens implements Serializable {
     @JoinColumn(name = "Servico_id", nullable = false)
     private Servico servico;
     
-    private int quantidade;
     
+    @Id
+    @ManyToOne
+    @JoinColumn(name = "Animal_id", nullable = false)
+    private Animal animal;
+  /*
+    private int quantidade;
+     */
     @Column(precision = 8, scale = 2)
     private BigDecimal valor;
     
-  
+   
     public OrdemServicoItens() {
                
         this.ordemServico = null;       
         this.servico = null;
-        this.quantidade = 0;
+        //this.quantidade = 0;
         this.valor = new BigDecimal("0.00");
        
     }
 
-    public OrdemServicoItens(Servico servico, int quantidade) {
+    public OrdemServicoItens(Servico servico) {
         this.servico = servico;
-        this.quantidade = quantidade;
+       // this.quantidade = quantidade;
         this.valor = servico.getValor();  
         //this.ordemServico = null; 
     }
@@ -64,7 +70,7 @@ public class OrdemServicoItens implements Serializable {
     public void setOrdemServico(OrdemServico ordemServico) {
         this.ordemServico = ordemServico;
     }
-
+/*
     public int getQuantidade() {
         return quantidade;
     }
@@ -72,6 +78,8 @@ public class OrdemServicoItens implements Serializable {
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
     }
+
+*/
     public BigDecimal getValor() {
         return valor;
     }
@@ -91,7 +99,7 @@ public class OrdemServicoItens implements Serializable {
     public int hashCode() {
         int hash = 5;
         hash = 79 * hash + Objects.hashCode(this.ordemServico);
-        hash = 79 * hash + this.quantidade;
+        hash = 79 * hash + Objects.hashCode(this.animal);
         hash = 79 * hash + Objects.hashCode(this.servico);
         return hash;
     }
@@ -108,7 +116,7 @@ public class OrdemServicoItens implements Serializable {
             return false;
         }
         final OrdemServicoItens other = (OrdemServicoItens) obj;
-        if (this.quantidade != other.quantidade) {
+       if (!Objects.equals(this.animal, other.animal)) {
             return false;
         }
         if (!Objects.equals(this.ordemServico, other.ordemServico)) {
